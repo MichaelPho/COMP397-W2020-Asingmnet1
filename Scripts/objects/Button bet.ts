@@ -9,6 +9,8 @@ module objects{
 
 
             //load image
+             
+            
             this.image.addEventListener("load", () =>{
 
                 if(isCentered){
