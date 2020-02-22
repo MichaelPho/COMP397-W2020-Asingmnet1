@@ -162,6 +162,7 @@ var Game = (function () {
         stage.addChild(jackPotEvent);
         //event
         exit.on("click", function () {
+            stage.removeAllChildren();
             background2 = new createjs.Bitmap('./Assets/image/backgroundEnd.jfif');
             stage.addChild(background2);
         });
@@ -247,11 +248,16 @@ var Game = (function () {
                 spinResult = Reels();
                 fruits = spinResult[0] + " - " + spinResult[1] + " - " + spinResult[2];
                 if (betterVersion) {
+                    stage.removeChild(result4);
+                    stage.removeChild(result5);
                     result4 = new objects.image("./Assets/image/" + spinResult[3] + ".png", 780, 320);
                     result5 = new objects.image("./Assets/image/" + spinResult[4] + ".png", 920, 320);
                     stage.addChild(result4);
                     stage.addChild(result5);
                 }
+                stage.removeChild(result1);
+                stage.removeChild(result2);
+                stage.removeChild(result3);
                 result1 = new objects.image("./Assets/image/" + spinResult[0] + ".png", 620, 320);
                 result2 = new objects.image("./Assets/image/" + spinResult[1] + ".png", 460, 320);
                 result3 = new objects.image("./Assets/image/" + spinResult[2] + ".png", 320, 320);
